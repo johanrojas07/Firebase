@@ -17,6 +17,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class DetailPage {
   note:any = {id:null, title:null , description:null};
   id :null;
+  vis : boolean = true;
   constructor(public navCtrl: NavController, public navParams: NavParams,  
     public notesService: NotesService) {
       this.id = navParams.get('id');
@@ -46,6 +47,7 @@ export class DetailPage {
   }
 
   deleteNote(){
+    this.vis= false;
     this.notesService.deleteNote(this.note);
     alert("Nota Eliminada");   
     this.navCtrl.pop();

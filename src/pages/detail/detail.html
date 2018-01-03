@@ -17,12 +17,12 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Titulo</ion-label>
-      <ion-input type="text" [(ngModel)]="note.title"></ion-input>
+      <ion-input *ngIf="!vis" type="text" [(ngModel)]="note.title"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Descripcion</ion-label>
-      <ion-textarea [(ngModel)]="note.description"></ion-textarea>
+      <ion-textarea *ngIf="!vis" [(ngModel)]="note.description"></ion-textarea>
     </ion-item>
   </ion-list>
   
